@@ -20,14 +20,10 @@ var students = {
 function pupil(freshman) {
   switch (freshman.status) {
     case "newcomer":
-      students[freshman.key] = {
-        name: "Temur",
-        age: 25,
-        grade: 1,
-      };
+      students[freshman.key] = [freshman.name, freshman.age, freshman.grade];
       break;
     case "remove":
-      delete students.student3;
+      delete students[freshman.key];
       break;
   }
   return {
@@ -48,5 +44,6 @@ console.log(
 console.log(
   pupil({
     status: "remove",
+    key: "student3",
   })
 );
